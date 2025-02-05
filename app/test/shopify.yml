@@ -1,0 +1,7 @@
+channel_type: "shopify"
+channel_url: "https://my-dev-shop-12.myshopify.com"
+api:
+  password: "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"
+  shop: "my-dev-shop-12"
+user_id: 3
+channel_name: "Shopify"

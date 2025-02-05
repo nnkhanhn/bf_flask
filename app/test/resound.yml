@@ -1,0 +1,8 @@
+channel_type: "resound"
+channel_url: "https://flex-api.sharetribe.com"
+api:
+  username: "joe@gmail.com"
+  access_token: "eyJhbGciOiJIUzI1NiJ9.eyJjbGllbnQtaWQiOiIwMjYzNTk4Yy1jZGZmLTRjZGQtOTNlYy02MDFmY2MyMDAwMTkiLCJ0ZW5hbmN5LWlkIjoiNjU2ZjU2MTMtZTJkNC00NTRlLTk2ZWQtNmMyNWJkMTJmYmEyIiwic2NvcGUiOiJ1c2VyIiwiZXhwIjoxNzI2MjIxNTMyLCJlbnYiOiJkZXYiLCJpZGVudCI6InJlc291bmRtYXJrZXQtZGV2IiwidXNlci1pZCI6IjY2ZTM5ZGU3LWU4Y2YtNDE0Yi1hNGM1LWEyMjc2M2Q4YmZiMiIsInVzZXItcm9sZXMiOlsidXNlci5yb2xlL3Byb3ZpZGVyIiwidXNlci5yb2xlL2N1c3RvbWVyIl19.bwFbzRdK11ybN6MG1AWGnC6JL1Xa8fo7bHeDBTdk3Zk"
+  refresh_token: "v2--f13aa11f-07f9-4e96-9525-d197d7ec8c14--8d2d93116f384bf90685c745d6874a3c53208e04"
+user_id: 3
+channel_name: "resound"

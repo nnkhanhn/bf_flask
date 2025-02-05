@@ -1,0 +1,7 @@
+channel_type: "reverb"
+channel_url: "https://sandbox.reverb.com/api"
+api:
+  token: "926fe24635d37bc3121e016613c5ea4239349ac975ae67e45ffc0b490cd41a48"
+  shop: "myshop-3"
+user_id: 3
+channel_name: "Reverb"

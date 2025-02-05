@@ -1,0 +1,9 @@
+channel_type: "bigcommerce"
+channel_url: "https://store-mhyw2wonvm.mybigcommerce.com"
+api:
+  shop: 'Truongnx Bigcommerce'
+  api_path: "https://api.bigcommerce.com/stores/mhyw2wonvm/v3/"
+  api_token: "oxxwwqwxthfupuwpby5k3jui51eamx5"
+  client_id: "l590i9qou3w0mq4r5mq4ydxu7a6ff9q"
+user_id: 2
+channel_name: "Bigcommerce"

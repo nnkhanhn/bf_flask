@@ -1,0 +1,10 @@
+channel_type: "bonanza"
+channel_url: "https://www.bonanza.com/booths/litcommerce_dev"
+api:
+  shop: 'litcommerce_dev'
+  api_dev_name: "nj6zX8ahAKSswgY"
+  api_cert_name: "93upecwWsXRxfNm"
+  api_token: "GDIufARY44"
+  api_path: "https://api.bonanza.com/api_requests"
+user_id: 2
+channel_name: "Bonanza"

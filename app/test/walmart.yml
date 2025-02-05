@@ -1,0 +1,8 @@
+channel_type: "walmart"
+channel_url: "https://sandbox.walmartapis.com"
+api:
+  shop: "Walmart Sandbox"
+  client_id: "6460f5b2-41d9-4300-a0c3-eae867c20c72"
+  client_secret: "ANQOzVlmp5_ad5O4uPgrtScp88NpWR-y77Ts6MNgpTJFXo4ooi1eAKgnrsJZcHHn5PbsdPVrsTvRQGrHb5ROAQY"
+user_id: 30
+channel_name: "walmart-sandbox"

@@ -1,0 +1,7 @@
+channel_type: "shopify"
+channel_url: "https://saladinsly.myshopify.com"
+api:
+  password: "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"
+  shop: "saladinsly"
+user_id: 2
+channel_name: "Shopify"

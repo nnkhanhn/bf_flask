@@ -1,0 +1,7 @@
+channel_type: "prestashop"
+channel_url: "http://localhost/prestashop"
+api:
+  api_key: "LGK6BEW1W6RU4ZKRPUH1YM3IU1P5A6UG"
+  shop: "PrestaArnold"
+user_id: 10
+channel_name: "Prestashop"

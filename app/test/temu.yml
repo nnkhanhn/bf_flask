@@ -1,0 +1,8 @@
+channel_type: "temu"
+api:
+  'access_token': 'uplcf8mhsjpp4uxv1npmjtpufypw1wfjvim0zfnfkcoro5xfgjft2wrdmar',
+  'app_key': '4ebbc9190ae410443d65b4c2faca981f',
+  "app_secret": '4782d2d827276688bf4758bed55dbdd4bbe79a79',
+  'name': 'ruanyi',
+user_id: 3
+channel_name: "temu"

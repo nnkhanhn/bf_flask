@@ -1,0 +1,11 @@
+channel_type: "shein"
+channel_url: "https://openapi-sem-test01.dotfashion.cn"
+api:
+  app_id: "10ADAAA5CE0008CF3585A106B6AFF"
+  app_secret_key: "D70A14A37467468AA4F5B96CE42A61F2"
+  password: "EED6AEEA6B4741EF94D29FED5A1CE76F"
+  open_key_id: "F510417C664448D386E87D47665213D6"
+  secret_key: "1743FEBC5E314E92A63C112EFDF600A3"
+  shop: "openapi-sem-test01"
+user_id: 14
+channel_name: "Shein"
