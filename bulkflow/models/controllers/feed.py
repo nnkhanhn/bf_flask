@@ -9,6 +9,6 @@ from bulkflow.libs.response import Response
 from bulkflow.libs.utils import to_int, get_model, to_str, get_server_id, FLAG_KILL_ALL, FLAG_STOP, log, to_len
 from bulkflow.models.constructs.feed_state import FeedState
 
-class ControllerFeed(Controller):
-	PULL_START_ACTION = 'display_pull'
-	_channel: ModelChannel or None
+class FeedController(Controller):
+	def create_feed(self):
+		pass
