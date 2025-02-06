@@ -1,6 +1,6 @@
 from typing import List
 
-from bulkflow.models.base import ConstructBase
+from bulkflow.models.base.base import ConstructBase
 
 class FeedState(ConstructBase):
     def __init__(self, **kwargs):

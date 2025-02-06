@@ -578,3 +578,50 @@ class Mysql:
 
 				self.log(e.msg, '', 'database')
 		return response_success()
+	
+	
+	def create_database(self):
+		config_root_file = get_pub_path() + '/../bulkflow/etc/config.ini'
+		config_file = config_root_file
+		config_processes_file = get_root_path() + '/bulkflow/etc/config.ini'
+		if self._migration_id and to_str(self._migration_id) in config_processes_file:
+			if os.path.isfile(config_processes_file):
+				config_file = config_processes_file
+		file_config = Path(config_file)
+		if not file_config.is_file():
+			return response_error()
+		config = configparser.ConfigParser()
+		config.read(config_file)
+		config_data = dict()
+		config_data['host'] = config[self.SECTION_CONFIG]['db_host']
+		config_data['user'] = config[self.SECTION_CONFIG]['db_username']
+		config_data['password'] = config[self.SECTION_CONFIG]['db_password']
+		config_data['raise_on_warnings'] = True
+		config_data['collation'] = 'utf8_general_ci'
+		config_data['charset'] = 'utf8'
+		config_data['use_unicode'] = True
+		database_name = config[self.SECTION_CONFIG]['db_name'] + '_' + to_str(self._migration_id)
+		if self._test:
+			database_name = config[self.SECTION_CONFIG]['db_name'] + '_test_' + to_str(self._migration_id)
+
+		try:
+			config_data['port'] = config[self.SECTION_CONFIG]['db_port']
+		except:
+			pass
+		try:
+			conn = mysql.connector.connect(**config_data)
+			cursor = conn.cursor()
+			# try:
+			# 	cursor.execute("DROP DATABASE IF EXISTS `" + database_name + "`")
+			# except:
+			# 	pass
+			cursor.execute('CREATE DATABASE IF NOT EXISTS `' + database_name + '` COLLATE=utf8_general_ci')
+			return response_success()
+		except mysql.connector.Error as e:
+			if e.errno == errorcode.ER_DB_CREATE_EXISTS:
+				return response_success()
+			self.log(e.msg, None, 'database')
+			return response_error(e)
+		except Exception as e:
+			self.log(e)
+			return response_error()

@@ -13,7 +13,7 @@ class Command():
 
 
 	def set_max_migration_id(self, migration_id):
-		path = get_root_path() + '/cartmigration/etc/'
+		path = get_root_path() + '/bulkflow/etc/'
 		file_name = path + 'max_id.ini'
 		check_exist = False
 		if os.path.isfile(file_name):
@@ -357,7 +357,7 @@ class Command():
 
 
 	def private_key(self, migration_id = None, option_args = None):
-		config_file = get_root_path() + '/cartmigration/etc/config.ini'
+		config_file = get_root_path() + '/bulkflow/etc/config.ini'
 		if not os.path.isfile(config_file):
 			print("Not found config file")
 			return

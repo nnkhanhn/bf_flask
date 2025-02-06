@@ -58,6 +58,10 @@ APP_LOG_SINGLE = 'single'
 APP_LOG_DAILY = 'daily'
 APP_LOG_CUSTOM = 'custom'
 LOG_SINGLE = ('process', 'attributes')
+
+TABLE_MAP = "feed_map"
+TABLE_FEED_INF = "feed_information"
+
 import time
 
 import jwt
