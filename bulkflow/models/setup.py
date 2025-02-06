@@ -62,13 +62,6 @@ class Setup():
     def setup_db_for_feed(self, feed_id, test=False):
         if not feed_id:
             return False
-        if to_str(get_config_ini('local', 'feed_separate_db', 'yes', feed_id)).lower().strip() == 'no':
-            return True
-        # feed = self.select_row(TABLE_feed, {'feed_id': feed_id})
-        # if not feed:
-        # 	return False
-        # if feed.get('db_name'):
-        # 	return True
         db = Mysql(test=test, feed_id=feed_id)
         db.set_feed_id(feed_id)
         db.create_database()
@@ -80,8 +73,6 @@ class Setup():
             res = db.query_raw(query['query'])
             if res['result'] != 'success':
                 return False
-        file_state = get_pub_path() + '/uploads/directory_country_region.sql'
-        db.execute_scripts_from_file(file_state)
         db.close_connect()
         return True
     

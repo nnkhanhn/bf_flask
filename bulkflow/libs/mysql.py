@@ -14,6 +14,7 @@ class Mysql:
 		self._cursor = None
 		self._db_host = ''
 		self._db_port = ''
+		self._feed_id = ''
 		self._db_username = ''
 		self._db_password = ''
 		self._db_name = ''

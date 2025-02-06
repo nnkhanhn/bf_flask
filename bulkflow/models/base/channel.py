@@ -72,3 +72,6 @@ class ModelChannel:
 		self._currency_converter = False
 		self._variants_update = {}
 		self._all_templates = None
+
+	def channel_setup(self):
+		pass
