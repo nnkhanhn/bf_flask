@@ -2,7 +2,7 @@ import copy
 import os
 import time
 
-from bulkflow.models.controllers.controller import Controller
+from bulkflow.models.base.controller import Controller
 from bulkflow.libs.errors import Errors
 from prodict import Prodict
 from bulkflow.libs.response import Response
@@ -11,4 +11,7 @@ from bulkflow.models.constructs.feed_state import FeedState
 
 class FeedController(Controller):
 	def create_feed(self):
+		pass
+
+	def setup_before_create(self):
 		pass
