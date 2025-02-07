@@ -824,7 +824,7 @@ def start_subprocess(buffer = None, wait = False):
 		user_id = Authorization().get_user_id_from_flask_request()
 		data['user_id'] = user_id
 		buffer['data'] = data
-	sync_id = to_str(data.get('sync_id'))
+	workspace_id = to_str(data.get('workspace_id'))
 	user_id = to_str(data.get('user_id'))
 	list_special = ['reset_migration', 'clone_migration', 'stop_auto_test', 'restart_migration', 'kill_end_loop_migration', 'kill_migration', 'delete_migration']
 	action = buffer.get('action')
@@ -832,14 +832,14 @@ def start_subprocess(buffer = None, wait = False):
 	if action not in list_special:
 		if user_id and check_folder_clone(os.path.join('users', user_id)):
 			path = os.path.join(get_pub_path(), 'clone', 'users', user_id)
-		if sync_id and check_folder_clone(os.path.join(DIR_PROCESS, sync_id)):
-			path = os.path.join(get_pub_path(), 'clone', DIR_PROCESS, sync_id)
+		if workspace_id and check_folder_clone(os.path.join(DIR_PROCESS, workspace_id)):
+			path = os.path.join(get_pub_path(), 'clone', DIR_PROCESS, workspace_id)
 
 		if path and to_decimal(os.path.getctime(path)) < to_decimal(get_config_ini('local', 'time_clone', 1589795205)):
 			old_path = path + '_v30'
 			os.rename(path, old_path)
-			clone_code_for_migration_id(sync_id)
-			folder_clear = '/sync/models/cart'
+			clone_code_for_migration_id(workspace_id)
+			folder_clear = '/workspace/models/cart'
 			shutil.rmtree(path + folder_clear)
 			shutil.copytree(old_path + folder_clear, path + folder_clear)
 

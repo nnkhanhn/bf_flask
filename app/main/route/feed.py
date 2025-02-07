@@ -6,81 +6,13 @@ feed_path = Blueprint('feed_path', __name__)
 
 @feed_path.route("feeds/create_feed", methods = ['post'])
 def create_feed():
+	'''
+	file: ../../../app/documents/docs/feed/create.yml
+	'''
 	request_data = get_flask_request_data()
 	buffer = dict()
 	buffer['controller'] = 'feed'
 	buffer['action'] = 'create_feed'
 	buffer['data'] = request_data
-	create = start_subprocess(buffer, wait = False)
+	create = start_subprocess(buffer, wait = True)
 	return jsonify(response_success(create))
-
-@feed_path.route("feeds/<int:feed_id>/rules/delete", methods = ['post'])
-def delete_rule(feed_id):
-	request_data = get_flask_request_data()
-	request_data['feed_id'] = feed_id
-	buffer = dict()
-	buffer['controller'] = 'feed'
-	buffer['action'] = 'delete_rule'
-	buffer['data'] = request_data
-	create = start_subprocess(buffer, wait = False)
-	return jsonify(response_success())
-
-@feed_path.route("feeds/<int:feed_id>/rule/<string:rule_id>/init", methods = ['post'])
-def init_rule(feed_id, rule_id):
-	request_data = get_flask_request_data()
-	request_data['feed_id'] = feed_id
-	request_data['rule_id'] = rule_id
-	buffer = dict()
-	buffer['controller'] = 'feed'
-	buffer['action'] = 'init_rule'
-	buffer['data'] = request_data
-	create = start_subprocess(buffer, wait = False)
-	return jsonify(response_success())
-
-@feed_path.route("feeds/<int:feed_id>/rule/<string:rule_id>/apply-rule", methods = ['post'])
-def apply_rule(feed_id, rule_id):
-	request_data = get_flask_request_data()
-	request_data['feed_id'] = feed_id
-	request_data['rule_id'] = rule_id
-	buffer = dict()
-	buffer['controller'] = 'feed'
-	buffer['action'] = 'apply_rule'
-	buffer['data'] = request_data
-	create = start_subprocess(buffer, wait = False)
-	return jsonify(response_success())
-
-@feed_path.route("feed-source/<int:source_id>/verify_connection", methods = ['post'])
-def feed_source_verify_connection(source_id):
-	request_data = get_flask_request_data()
-	request_data['source_id'] = source_id
-	request_data['process_type'] = 'product'
-	buffer = dict()
-	buffer['controller'] = 'feed'
-	buffer['action'] = 'feed_source_verify_connection'
-	buffer['data'] = request_data
-	verify = start_subprocess(buffer, wait = True)
-	return jsonify(verify.to_dict())
-
-@feed_path.route("feeds/<string:master_rule_id>/rule/<string:rule_id>/apply-rule", methods = ['post'])
-def apply_rule_master_rule(master_rule_id, rule_id):
-	request_data = get_flask_request_data()
-	request_data['master_rule_id'] = master_rule_id
-	request_data['rule_id'] = rule_id
-	buffer = dict()
-	buffer['controller'] = 'feed'
-	buffer['action'] = 'apply_rule_master_rule'
-	buffer['data'] = request_data
-	create = start_subprocess(buffer, wait = False)
-	return jsonify(response_success())
-
-@feed_path.route("feeds/<string:master_rule_id>/rule/<string:rule_id>/init", methods = ['post'])
-def init_rule_master_rule(master_rule_id, rule_id):
-	request_data = get_flask_request_data()
-	request_data['master_rule_id'] = master_rule_id
-	request_data['rule_id'] = rule_id
-	buffer = dict()
-	buffer['controller'] = 'feed'
-	buffer['action'] = 'init_rule_master_rule'
-	buffer['data'] = request_data
-	create = start_subprocess(buffer, wait = False)
-	return jsonify(response_success())

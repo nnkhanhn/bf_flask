@@ -97,6 +97,11 @@ class Mysql:
 	def set_db_prefix(self, prefix = ''):
 		self._db_prefix = prefix
 		return self
+	
+	
+	def set_feed_id(self, feed_id = ''):
+		self._feed_id = feed_id
+		return self
 
 
 	def set_db_port(self, port = 3306):

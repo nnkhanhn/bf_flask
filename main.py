@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from bulkflow.libs.utils import *
 from app.main.middleware.auth import Auth
+from app.main.route.feed import feed_path
 from marshmallow import Schema, fields
 
 ROOT_DIR = get_root_path()
@@ -67,7 +68,7 @@ def hello():
 	name = request.args.get('name')
 	return jsonify({"message": f"Hello, {name}!"})
 
-
+app.register_blueprint(feed_path, url_prefix = '/api/v1')
 
 if __name__ == '__main__':
 	port = to_int(get_config_ini('local', 'port'))
